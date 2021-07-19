@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:freshnom/models.dart/user.dart';
+import 'package:freshnom/models/user.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

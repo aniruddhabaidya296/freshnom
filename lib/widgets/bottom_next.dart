@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:freshnom/Themes/text_themes.dart';
-import 'package:freshnom/models.dart/user.dart';
+import 'package:freshnom/models/user.dart';
 import 'package:freshnom/pages/body_height.dart';
 import 'package:http/http.dart' as http;
 import 'package:freshnom/pages/body_weight.dart';
