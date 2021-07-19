@@ -2,6 +2,7 @@
 // import 'package:circle_wheel_scroll/circle_wheel_scroll_view.dart';
 import 'package:circle_wheel_scroll/circle_wheel_scroll_view.dart';
 import 'package:flutter/material.dart';
+import 'package:freshnom/pages/sign_up.dart';
 import 'package:freshnom/widgets/app_bar.dart';
 import 'package:freshnom/widgets/bottom_next.dart';
 import 'package:freshnom/widgets/caption.dart';
@@ -85,7 +86,10 @@ class _BodyWeightState extends State<BodyWeight> {
                       onSelectedItemChanged: (int index) => {
                             print("$weightController"),
                             print('Current index: $index'),
-                            // setState(() => selectedElementColor = Colors.white)
+                            setState(() => {
+                                  client.weight = index,
+                                  print("client weight: ${client.weight}")
+                                })
                           }),
                 ]))
           ])),

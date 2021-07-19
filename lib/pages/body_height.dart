@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:freshnom/main.dart';
+import 'package:freshnom/pages/sign_up.dart';
 import 'package:freshnom/widgets/app_bar.dart';
 import 'package:freshnom/widgets/bottom_next.dart';
 import 'package:freshnom/widgets/caption.dart';
 import 'package:freshnom/widgets/description.dart';
 import 'package:freshnom/widgets/text_form_field.dart';
+
+var feetValue, inchValue;
+void updateHeight() {
+  client.height = "$feetValue ft $inchValue in ";
+  print("${client.height}");
+}
 
 class BodyHeight extends StatefulWidget {
   const BodyHeight({Key? key}) : super(key: key);
@@ -43,9 +50,7 @@ class _BodyHeightState extends State<BodyHeight> {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                        MyTextFormField(labelText: "ft", width: 60),
-                        SizedBox(width: 20),
-                        MyTextFormField(labelText: "in", width: 60)
+                        MyHeightField(width: 60),
                       ])),
                 ])),
           ));

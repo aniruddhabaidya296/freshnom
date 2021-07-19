@@ -1,6 +1,12 @@
+import 'dart:convert';
+import 'text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:freshnom/Themes/text_themes.dart';
+import 'package:freshnom/models.dart/user.dart';
+import 'package:freshnom/pages/body_height.dart';
+import 'package:http/http.dart' as http;
 import 'package:freshnom/pages/body_weight.dart';
+import 'package:freshnom/pages/sign_up.dart';
 
 class NextWidget extends StatelessWidget {
   final String routeName;
@@ -32,7 +38,15 @@ class NextWidget extends StatelessWidget {
               ),
               SizedBox(width: 10),
               IconButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    if (routeName == "/bodytype") {
+                      feetValue = feetValueController.text;
+                      inchValue = inchValueController.text;
+                      updateHeight();
+                    }
+                    if (textName == "Explore") {
+                      await _callUpdateClient(client);
+                    }
                     Navigator.pushNamed(context, routeName);
                   },
                   icon: Icon(
@@ -42,5 +56,17 @@ class NextWidget extends StatelessWidget {
             ],
           ),
         ));
+  }
+
+  Future<http.Response> _callUpdateClient(FreshnomUser client) {
+    return http.put(Uri.parse('http://192.168.31.227:3306/freshnom/user'),
+        body: jsonEncode(<String, dynamic>{
+          'Id': client.id,
+          'Gender': client.gender,
+          'Weight': client.weight,
+          'Height': client.height,
+          'BodyType': client.bodytype,
+          'PreferredFood': client.food
+        }));
   }
 }

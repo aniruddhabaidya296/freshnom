@@ -1,6 +1,7 @@
 import 'package:circle_button/circle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:freshnom/Themes/circle_theme.dart';
+import 'package:freshnom/pages/sign_up.dart';
 import 'package:freshnom/widgets/app_bar.dart';
 import 'package:freshnom/widgets/bottom_next.dart';
 import 'package:freshnom/widgets/caption.dart';
@@ -46,14 +47,15 @@ class _FoodTypeState extends State<FoodType> {
                           bottom: 100,
                           child: CircleButton(
                             onTap: () => {
-                              print("salad"),
                               setState(() => {
+                                    client.food = "Salads",
                                     salads.selectedColors(),
                                     juices.initColors(),
                                     heavyMeals.initColors(),
                                     soups.initColors(),
                                     meals.initColors(),
                                   }),
+                              print("client.food: ${client.food}")
                             },
                             width: 100,
                             height: 100,
@@ -74,14 +76,15 @@ class _FoodTypeState extends State<FoodType> {
                           left: 100,
                           child: CircleButton(
                             onTap: () => {
-                              print("Soups"),
                               setState(() => {
+                                    client.food = "Soups",
                                     soups.selectedColors(),
                                     juices.initColors(),
                                     salads.initColors(),
                                     heavyMeals.initColors(),
                                     meals.initColors(),
-                                  })
+                                  }),
+                              print("client.food: ${client.food}")
                             },
                             width: 100,
                             height: 100,
@@ -102,14 +105,15 @@ class _FoodTypeState extends State<FoodType> {
                           left: 93,
                           child: CircleButton(
                             onTap: () => {
-                              print("juice"),
                               setState(() => {
+                                    client.food = "Juices",
                                     juices.selectedColors(),
                                     heavyMeals.initColors(),
                                     salads.initColors(),
                                     soups.initColors(),
                                     meals.initColors(),
                                   }),
+                              print("client.food: ${client.food}")
                             },
                             width: 100,
                             height: 100,
@@ -130,14 +134,15 @@ class _FoodTypeState extends State<FoodType> {
                           right: 18,
                           child: CircleButton(
                             onTap: () => {
-                              print("Heavy Meals"),
                               setState(() => {
+                                    client.food = "Heavy Meals",
                                     heavyMeals.selectedColors(),
                                     juices.initColors(),
                                     salads.initColors(),
                                     soups.initColors(),
                                     meals.initColors(),
                                   }),
+                              print("client.food: ${client.food}")
                             },
                             width: 100,
                             height: 100,
@@ -158,14 +163,15 @@ class _FoodTypeState extends State<FoodType> {
                           right: 12,
                           child: CircleButton(
                             onTap: () => {
-                              print("Meals"),
                               setState(() => {
+                                    client.food = "Meals",
                                     juices.initColors(),
                                     salads.initColors(),
                                     soups.initColors(),
                                     meals.selectedColors(),
                                     heavyMeals.initColors()
                                   }),
+                              print("client.food: ${client.food}")
                             },
                             width: 100,
                             height: 100,

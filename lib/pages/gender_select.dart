@@ -2,6 +2,7 @@ import 'package:circle_button/circle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:freshnom/main.dart';
 import 'package:freshnom/pages/body_weight.dart';
+import 'package:freshnom/pages/sign_up.dart';
 import 'package:freshnom/widgets/app_bar.dart';
 import 'package:freshnom/widgets/bottom_next.dart';
 import 'package:freshnom/widgets/caption.dart';
@@ -16,6 +17,7 @@ class GenderSelect extends StatefulWidget {
 }
 
 class _GenderSelectState extends State<GenderSelect> {
+  var gender;
   Color maleColor = Colors.transparent;
   Color femaleColor = Colors.transparent;
   Color otherColor = Colors.transparent;
@@ -52,8 +54,11 @@ class _GenderSelectState extends State<GenderSelect> {
                           left: 150,
                           child: CircleButton(
                             onTap: () => {
-                              print("Female"),
-                              setState(() => {setFemaleColors()}),
+                              setState(() => {
+                                    setFemaleColors(),
+                                    client.gender = "Female"
+                                  }),
+                              print("${client.gender}"),
                             },
                             width: 150,
                             height: 150,
@@ -73,8 +78,9 @@ class _GenderSelectState extends State<GenderSelect> {
                           top: 10,
                           child: CircleButton(
                             onTap: () => {
-                              print("Male"),
-                              setState(() => {setMaleColors()})
+                              setState(() =>
+                                  {setMaleColors(), client.gender = "Male"}),
+                              print("${client.gender}")
                             },
                             width: 150,
                             height: 150,
@@ -95,8 +101,11 @@ class _GenderSelectState extends State<GenderSelect> {
                           left: 83,
                           child: CircleButton(
                             onTap: () => {
-                              print("Other"),
-                              setState(() => {setOtherColors()}),
+                              setState(() => {
+                                    client.gender = "Other",
+                                    setOtherColors(),
+                                  }),
+                              print("${client.gender}")
                             },
                             width: 150,
                             height: 150,

@@ -1,6 +1,7 @@
 import 'package:circle_button/circle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:freshnom/Themes/circle_theme.dart';
+import 'package:freshnom/pages/sign_up.dart';
 import 'package:freshnom/widgets/app_bar.dart';
 import 'package:freshnom/widgets/bottom_next.dart';
 import 'package:freshnom/widgets/caption.dart';
@@ -62,13 +63,15 @@ class _BodyTypeState extends State<BodyType> {
                                 left: 150,
                                 child: CircleButton(
                                   onTap: () => {
-                                    print("endomorph"),
                                     setState(() => {
+                                          client.bodytype = "Endomorph",
                                           endo.selectedColors(),
                                           ecto.initColors(),
                                           meso.initColors(),
                                           show = SizedBox(height: 10)
                                         }),
+                                    print(
+                                        "client.bodytype: ${client.bodytype}"),
                                   },
                                   width: 150,
                                   height: 150,
@@ -88,13 +91,15 @@ class _BodyTypeState extends State<BodyType> {
                                 top: 10,
                                 child: CircleButton(
                                   onTap: () => {
-                                    print("ectomorph"),
                                     setState(() => {
+                                          client.bodytype = "Ectomorph",
                                           ecto.selectedColors(),
                                           endo.initColors(),
                                           meso.initColors(),
                                           show = ectoCont
-                                        })
+                                        }),
+                                    print(
+                                        "client.bodytype: ${client.bodytype}"),
                                   },
                                   width: 150,
                                   height: 150,
@@ -115,13 +120,15 @@ class _BodyTypeState extends State<BodyType> {
                                 left: 83,
                                 child: CircleButton(
                                   onTap: () => {
-                                    print("mesomorph"),
                                     setState(() => {
+                                          client.bodytype = "Mesomorph",
                                           meso.selectedColors(),
                                           ecto.initColors(),
                                           endo.initColors(),
                                           show = SizedBox(height: 10)
                                         }),
+                                    print(
+                                        "client.bodytype: ${client.bodytype}"),
                                   },
                                   width: 150,
                                   height: 150,

@@ -21,6 +21,8 @@ dependencies:
   hovering: ^1.0.4
   hover_effect: ^0.6.0
   circle_wheel_scroll: ^0.0.1+1
+  mysql1: ^0.19.2
+  http: ^0.13.3
 
 dev_dependencies:
   flutter_test:
